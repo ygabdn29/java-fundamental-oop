@@ -27,7 +27,7 @@ public class Main {
     arrayAsset[8] = asset9;
     arrayAsset[9] = asset10;
 
-    System.out.println(userKevinn.login());
+    System.out.println(userKevinn.login("kevinn", "kevin123"));
 
     for( int i = 0; i < arrayAsset.length; i++){
       arrayAsset[i].displayAsset();

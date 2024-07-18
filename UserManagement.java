@@ -1,3 +1,3 @@
 public interface UserManagement {
-  public String login();
+  public String login(String username, String password);
 }

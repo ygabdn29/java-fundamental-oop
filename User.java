@@ -1,4 +1,4 @@
-import dataStatic.Data;
+// import dataStatic.Data;
 
 
 public class User implements UserManagement{
@@ -28,17 +28,16 @@ public class User implements UserManagement{
   }
 
   @Override
-  public String login() {
-    String username = getUsername();
-    String password = getPassword();
+  public String login(String username, String password) {
 
     if(username.length() == 0 || password.length() == 0) return "Invalid Login Attempt";
 
-    for(int i = 0; i < Data.users.length; i++){
-        if(Data.users[i][0] == username && Data.users[i][1] == password){
-          return "Login Berhasil";
-        }
-      }  
-      return "Username atau Password salah";
+    // for(int i = 0; i < Data.users.length; i++){
+    //     if(Data.users[i][0] == username && Data.users[i][1] == password){
+    //       return "Login Berhasil";
+    //     }
+    //   }  
+    if(username == this.username && password == this.password) return "Login berhasil";
+      return "Username atau password salah";
   }
 }
