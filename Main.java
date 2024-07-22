@@ -14,6 +14,11 @@ public class Main {
     userList.add(userJulia);
     userList.add(userAlexx);
 
+    // Menampilkan user
+    System.out.println("=== Username ===");
+    userList.stream()
+    .forEach(x -> System.out.println(x.getUsername()));
+
     // User userJuliaa = new User("juliaa", "julia123");
     // User userAlexx = new User("alexx", "alex123");
 
