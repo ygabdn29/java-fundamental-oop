@@ -1,12 +1,14 @@
 // import dataStatic.Data;
 
-
-public class User implements UserManagement{
+public class User  extends Employee implements UserManagement{
   private String username;
   private String password;
 
 
-  public User(String username, String password) {
+
+
+  public User(String name, String email, String phone, String username, String password) {
+    super(name, email, phone);
     this.username = username;
     this.password = password;
   }
@@ -29,15 +31,16 @@ public class User implements UserManagement{
 
   @Override
   public String login(String username, String password) {
-
     if(username.length() == 0 || password.length() == 0) return "Invalid Login Attempt";
 
-    // for(int i = 0; i < Data.users.length; i++){
-    //     if(Data.users[i][0] == username && Data.users[i][1] == password){
-    //       return "Login Berhasil";
-    //     }
-    //   }  
     if(username == this.username && password == this.password) return "Login berhasil";
-      return "Username atau password salah";
+    
+    return "Username atau password salah";
+  }
+
+  // Override method
+  @Override
+  public void displayDetail(){
+    System.out.println("Username:  " + username);
   }
 }
